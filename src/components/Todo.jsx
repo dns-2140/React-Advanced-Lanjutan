@@ -11,10 +11,16 @@ const Todo = ({ todo, onToggle, onDelete }) => {
     onDelete(id);
   }
   return (
-    <div className={`${completed ? 'completed' : ''}`}>
-      <input type='checkbox' onChange={handleChange} checked={completed} />
-      <span>{title}</span>
-      <button onClick={handleClick}>
+    <div className={`todo ${completed ? 'completed' : ''}`}>
+      <input
+        type='checkbox'
+        onChange={handleChange}
+        checked={completed}
+        class='checkbox'
+      />
+      <label for='circleCheck'></label>
+      <span className={`${completed ? 'completed' : ''}`}>{title}</span>
+      <button onClick={handleClick} class='trash-icon'>
         <FaTrash />
       </button>
     </div>

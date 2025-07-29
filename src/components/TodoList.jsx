@@ -13,7 +13,7 @@ const TodoList = ({ todos }) => {
     dispatch(deleteTodo(id));
   };
   return (
-    <div>
+    <div className='todoList'>
       {todos?.map((todo) => (
         <Todo
           key={todo.id}

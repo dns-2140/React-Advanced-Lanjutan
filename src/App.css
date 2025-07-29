@@ -23,6 +23,7 @@
 
 [data-theme='light'] {
   --background-color: var(--color-gray-100);
+  --banner-color: var(--color-gray-200);
   --button-background: var(--color-blue-dark);
   --button-text: var(--color-gray-100);
   --input-border: var(--color-gray-300);
@@ -31,6 +32,7 @@
 
 [data-theme='dark'] {
   --background-color: var(--color-gray-600);
+  --banner-color: var(--color-gray-600);
   --button-background: var(--color-blue-dark);
   --button-text: var(--color-gray-300);
 }
@@ -42,21 +44,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-.completed {
+.themeToggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.banner {
+  width: 100%;
+  max-width: 1440px;
+  height: 200px;
+  background-color: var(--banner-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner img {
+}
+
+span.completed {
   text-decoration: line-through;
 }
 
 .todoContainer {
-  width: 736px;
+  max-width: 736px;
+  width: 100%;
 }
 
 .todoForm {
-  width: 736px;
+  max-width: 736px;
   display: flex;
   gap: 8px;
   margin-bottom: 4rem;
+  margin-top: -26px;
 }
 
 .todoForm input {
@@ -76,4 +100,60 @@
   padding: 16px;
   display: flex;
   gap: 8px;
+}
+
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo {
+  border: 1px solid var(--color-gray-500);
+  padding: 1rem;
+  display: flex;
+  gap: 12px;
+  border-radius: 0.5rem;
+}
+
+.todo.completed {
+  background: var(--color-gray-200, 0.5);
+  color: var(--color-gray-500);
+  opacity: 0.5;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 17.45px;
+  height: 17.45px;
+  border: 2px solid #ccc; /* Border color when unchecked */
+  border-radius: 50%; /* Makes it a circle */
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Checked state - Blue circle with white checkmark */
+input[type='checkbox']:checked {
+  background: var(--color-purple-dark); /* Blue background */
+  border-color: var(--color-purple-dark); /* Match border to background */
+}
+
+/* Checkmark (✓) appears only when checked */
+input[type='checkbox']:checked::after {
+  content: '✓';
+  color: var(--color-gray-100);
+  font-size: 12px;
+}
+
+.trash-icon {
+  margin-left: auto;
+  border: none;
+  width: 24px;
+  height: 24px;
 }

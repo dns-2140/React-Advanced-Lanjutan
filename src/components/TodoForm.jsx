@@ -18,9 +18,12 @@ const TodoForm = ({ onAdd }) => {
         type='text'
         value={title}
         onChange={handleChange}
-        placeholder='Add a new todo..'
+        placeholder='Tambah tugas baru'
       />
-      <button type='submit'>Add</button>
+      <button type='submit'>
+        <span>Tambah</span>
+        <img src='./plus.svg' alt='' />
+      </button>
     </form>
   );
 };
