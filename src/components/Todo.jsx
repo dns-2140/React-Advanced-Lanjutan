@@ -20,7 +20,7 @@ const Todo = ({ todo, onToggle, onDelete }) => {
       <label for='circleCheck'></label>
       <span className={`${completed ? 'completed' : ''}`}>{title}</span>
       <button onClick={handleClick} class='trash-icon'>
-        <img src='./trash.svg' alt='' />
+        <img src='./trash.svg' alt='' className='trash-icon-img' />
       </button>
     </div>
   );

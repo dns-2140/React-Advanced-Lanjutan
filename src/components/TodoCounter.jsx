@@ -7,10 +7,7 @@ const TodoCounter = ({ finishedCount, unFinishedCount }) => {
         Belum selesai <span>{unFinishedCount} </span>
       </span>
       <span className='finished'>
-        Selesai{' '}
-        <span>
-          {finishedCount} de {unFinishedCount}{' '}
-        </span>{' '}
+        Selesai <span>{finishedCount} de 200 </span>{' '}
       </span>
     </div>
   );

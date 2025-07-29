@@ -33,6 +33,7 @@
   --counter-bgcolor-finished: var(--color-purple);
   --todo-bgcolor-completed: var(--color-gray-200, 0.5);
   --todo-title-color-completed: var(--color-gray-500);
+  --trash-icon-filter: invert(30%) sepia(0%) saturate(150%) hue-rotate(90deg);
 }
 
 [data-theme='dark'] {
@@ -46,6 +47,7 @@
   --todo-title-color: var(--color-gray-100);
   --todo-bgcolor-completed: var(--color-gray-500);
   --todo-title-color-completed: var(--color-gray-300);
+  --trash-icon-filter: invert(80%) sepia(0%) saturate(150%) hue-rotate(90deg);
 }
 
 .app {
@@ -266,4 +268,11 @@ input.error {
   80% {
     transform: translateX(4px);
   }
+}
+
+.trash-icon-img {
+  width: 18px;
+  height: 18px;
+  filter: var(--trash-icon-filter);
+  transition: filter 0.2s ease;
 }
