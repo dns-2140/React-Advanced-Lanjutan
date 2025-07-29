@@ -15,11 +15,11 @@ const Todo = ({ todo, onToggle, onDelete }) => {
         type='checkbox'
         onChange={handleChange}
         checked={completed}
-        class='checkbox'
+        className='checkbox'
       />
-      <label for='circleCheck'></label>
+      <label htmlFor='circleCheck'></label>
       <span className={`${completed ? 'completed' : ''}`}>{title}</span>
-      <button onClick={handleClick} class='trash-icon'>
+      <button onClick={handleClick} className='trash-icon'>
         <img src='./trash.svg' alt='' className='trash-icon-img' />
       </button>
     </div>

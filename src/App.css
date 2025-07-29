@@ -276,6 +276,7 @@ input.error {
   height: 18px;
   filter: var(--trash-icon-filter);
   transition: filter 0.2s ease;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
