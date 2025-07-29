@@ -25,6 +25,7 @@ const TodoContainer = () => {
   };
   const finishedCount = todos.filter((todo) => todo.completed).length;
   const unFinishedCount = todos.filter((todo) => !todo.completed).length;
+  const totalCount = todos[todos.length - 1]?.id;
   if (error) return <p>{error.message}</p>;
   return (
     <div className='todoContainer'>
@@ -32,6 +33,7 @@ const TodoContainer = () => {
       <TodoCounter
         finishedCount={finishedCount}
         unFinishedCount={unFinishedCount}
+        totalCount={totalCount}
       />
       <TodoList todos={todos} />
     </div>
