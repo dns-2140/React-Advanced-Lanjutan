@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaTrash } from 'react-icons/fa';
 
 const Todo = ({ todo, onToggle, onDelete }) => {
   const { id, title, completed } = todo;
@@ -21,7 +20,7 @@ const Todo = ({ todo, onToggle, onDelete }) => {
       <label for='circleCheck'></label>
       <span className={`${completed ? 'completed' : ''}`}>{title}</span>
       <button onClick={handleClick} class='trash-icon'>
-        <FaTrash />
+        <img src='./trash.svg' alt='' />
       </button>
     </div>
   );
