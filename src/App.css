@@ -24,17 +24,28 @@
 [data-theme='light'] {
   --background-color: var(--color-gray-100);
   --banner-color: var(--color-gray-200);
+  --input-color: var(--color-gray-100);
   --button-background: var(--color-blue-dark);
   --button-text: var(--color-gray-100);
   --input-border: var(--color-gray-300);
   --input-text: var(--color-gray-300);
+  --counter-bgcolor-unfinished: var(--color-blue);
+  --counter-bgcolor-finished: var(--color-purple);
+  --todo-bgcolor-completed: var(--color-gray-200, 0.5);
+  --todo-title-color-completed: var(--color-gray-500);
 }
 
 [data-theme='dark'] {
   --background-color: var(--color-gray-600);
-  --banner-color: var(--color-gray-600);
+  --banner-color: var(--color-gray-700);
   --button-background: var(--color-blue-dark);
-  --button-text: var(--color-gray-300);
+  --button-text: var(--color-gray-100);
+  --input-color: var(--color-gray-500);
+  --counter-bgcolor-unfinished: var(--color-gray-400);
+  --counter-bgcolor-finished: var(--color-gray-400);
+  --todo-title-color: var(--color-gray-100);
+  --todo-bgcolor-completed: var(--color-gray-500);
+  --todo-title-color-completed: var(--color-gray-300);
 }
 
 .app {
@@ -85,6 +96,7 @@ span.completed {
 
 .todoForm input {
   width: 100%;
+  background-color: var(--input-color);
   border: 1px solid var(--input-border);
   color: var(--input-text);
   radius: 8px;
@@ -114,11 +126,12 @@ span.completed {
   display: flex;
   gap: 12px;
   border-radius: 0.5rem;
+  color: var(--todo-title-color);
 }
 
 .todo.completed {
-  background: var(--color-gray-200, 0.5);
-  color: var(--color-gray-500);
+  background: var(--todo-bgcolor-completed);
+  color: var(--todo-title-color-completed);
   opacity: 0.5;
 }
 
@@ -168,7 +181,7 @@ input[type='checkbox']:checked::after {
 .unfinished {
   color: var(--color-blue);
   span {
-    background-color: var(--color-blue);
+    background-color: var(--counter-bgcolor-unfinished);
     color: var(--color-gray-100);
     border-radius: 999px;
     padding: 2px 8px;
@@ -178,7 +191,7 @@ input[type='checkbox']:checked::after {
 .finished {
   color: var(--color-purple);
   span {
-    background-color: var(--color-purple);
+    background-color: var(--counter-bgcolor-finished);
     color: var(--color-gray-100);
     border-radius: 999px;
     padding: 2px 8px;
