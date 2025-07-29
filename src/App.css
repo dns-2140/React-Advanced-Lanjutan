@@ -276,3 +276,9 @@ input.error {
   filter: var(--trash-icon-filter);
   transition: filter 0.2s ease;
 }
+
+@media (max-width: 768px) {
+  .app {
+    padding: 0 1rem;
+  }
+}
