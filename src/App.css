@@ -158,3 +158,29 @@ input[type='checkbox']:checked::after {
   height: 24px;
   background: transparent;
 }
+
+.todoCounter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.unfinished {
+  color: var(--color-blue);
+  span {
+    background-color: var(--color-blue);
+    color: var(--color-gray-100);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+}
+
+.finished {
+  color: var(--color-purple);
+  span {
+    background-color: var(--color-purple);
+    color: var(--color-gray-100);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+}

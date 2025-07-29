@@ -8,6 +8,7 @@ import {
 } from '../redux/asyncReducer';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
+import TodoCounter from './TodoCounter';
 import TodoList from './TodoList';
 
 const TodoContainer = () => {
@@ -22,11 +23,16 @@ const TodoContainer = () => {
     console.log(title);
     dispatch(addTodo(title));
   };
-
+  const finishedCount = todos.filter((todo) => todo.completed).length;
+  const unFinishedCount = todos.filter((todo) => !todo.completed).length;
   if (error) return <p>{error.message}</p>;
   return (
     <div className='todoContainer'>
       <TodoForm onAdd={handleAddTodo} />
+      <TodoCounter
+        finishedCount={finishedCount}
+        unFinishedCount={unFinishedCount}
+      />
       <TodoList todos={todos} />
     </div>
   );
