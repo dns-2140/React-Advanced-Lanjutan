@@ -184,3 +184,29 @@ input[type='checkbox']:checked::after {
     padding: 2px 8px;
   }
 }
+
+.theme-toggle {
+  all: unset; /* Remove default button styles */
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+
+.theme-icon {
+  font-size: 1.25rem;
+  color: var(--color-gray-300);
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+  color: var(--color-purple-dark);
+  transform: scale(1.1);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
