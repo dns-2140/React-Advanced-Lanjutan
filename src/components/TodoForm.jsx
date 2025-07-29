@@ -13,7 +13,7 @@ const TodoForm = ({ onAdd }) => {
     setTitle(e.target.value);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='todoForm'>
       <input
         type='text'
         value={title}

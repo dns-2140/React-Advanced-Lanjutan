@@ -23,10 +23,16 @@
 
 [data-theme='light'] {
   --background-color: var(--color-gray-100);
+  --button-background: var(--color-blue-dark);
+  --button-text: var(--color-gray-100);
+  --input-border: var(--color-gray-300);
+  --input-text: var(--color-gray-300);
 }
 
 [data-theme='dark'] {
   --background-color: var(--color-gray-600);
+  --button-background: var(--color-blue-dark);
+  --button-text: var(--color-gray-300);
 }
 
 .app {
@@ -35,8 +41,39 @@
   max-width: 1440px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.todoContainer {
+  width: 736px;
+}
+
+.todoForm {
+  width: 736px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4rem;
+}
+
+.todoForm input {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  radius: 8px;
+  padding: 16px;
+}
+
+.todoForm button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  width: 111px;
+  height: 52px;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  gap: 8px;
 }
