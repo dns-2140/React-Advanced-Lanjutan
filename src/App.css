@@ -282,3 +282,19 @@ input.error {
     padding: 0 1rem;
   }
 }
+
+.clipboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  .firstText {
+    color: var(--color-gray-300);
+  }
+
+  .secondText {
+    color: var(--color-gray-200);
+  }
+}
