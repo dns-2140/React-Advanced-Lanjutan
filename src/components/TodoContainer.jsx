@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   fetchTodos,
   updateTodo,
   deleteTodo,
   addTodo,
-} from '../redux/asyncReducer';
-import Todo from './Todo';
-import TodoForm from './TodoForm';
-import TodoCounter from './TodoCounter';
-import TodoList from './TodoList';
+} from "../redux/asyncReducer";
+import Todo from "./Todo";
+import TodoForm from "./TodoForm";
+import TodoCounter from "./TodoCounter";
+import TodoList from "./TodoList";
 
 const TodoContainer = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,6 @@ const TodoContainer = () => {
   }, [dispatch]);
 
   const handleAddTodo = (title) => {
-    console.log(title);
     dispatch(addTodo(title));
   };
   const finishedCount = todos.filter((todo) => todo.completed).length;
@@ -28,7 +27,7 @@ const TodoContainer = () => {
   const totalCount = todos[todos.length - 1]?.id;
   if (error) return <p>{error.message}</p>;
   return (
-    <div className='todoContainer'>
+    <div className="todoContainer">
       <TodoForm onAdd={handleAddTodo} />
       <TodoCounter
         finishedCount={finishedCount}
