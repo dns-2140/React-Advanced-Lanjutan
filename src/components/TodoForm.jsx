@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const TodoForm = ({ onAdd }) => {
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const TodoForm = ({ onAdd }) => {
     }
 
     onAdd(title);
-    setTitle('');
+    setTitle("");
   };
 
   const handleChange = (e) => {
@@ -21,41 +21,41 @@ const TodoForm = ({ onAdd }) => {
     setTitle(e.target.value);
   };
   return (
-    <form onSubmit={handleSubmit} className='todoForm'>
-      <div className='input-wrapper'>
+    <form onSubmit={handleSubmit} className="todoForm">
+      <div className="input-wrapper">
         <input
-          type='text'
+          type="text"
           value={title}
           onChange={handleChange}
-          placeholder='Tambah tugas baru'
+          placeholder="Tambah tugas baru"
           aria-invalid={showAlert}
-          aria-describedby='empty-alert'
-          className={showAlert ? 'error' : ''}
+          aria-describedby="empty-alert"
+          className={showAlert ? "error" : ""}
         />
 
         {showAlert && (
-          <div id='empty-alert' className='alert' role='alert'>
+          <div id="empty-alert" className="alert" role="alert">
             <svg
-              width='16'
-              height='16'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
             >
               <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
-                d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
             <span>Task cannot be empty</span>
           </div>
         )}
       </div>
-      <button type='submit'>
+      <button type="submit" aria-label="tambah">
         <span>Tambah</span>
-        <img src='./plus.svg' alt='' />
+        <img src="./plus.svg" alt="" />
       </button>
     </form>
   );

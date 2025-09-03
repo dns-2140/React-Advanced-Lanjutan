@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Todo = ({ todo, onToggle, onDelete }) => {
   const { id, title, completed } = todo;
@@ -10,17 +10,17 @@ const Todo = ({ todo, onToggle, onDelete }) => {
     onDelete(id);
   }
   return (
-    <div className={`todo ${completed ? 'completed' : ''}`}>
+    <div className={`todo ${completed ? "completed" : ""}`}>
       <input
-        type='checkbox'
+        type="checkbox"
         onChange={handleChange}
         checked={completed}
-        className='checkbox'
+        className="checkbox"
       />
-      <label htmlFor='circleCheck'></label>
-      <span className={`${completed ? 'completed' : ''}`}>{title}</span>
-      <button onClick={handleClick} className='trash-icon'>
-        <img src='./trash.svg' alt='' className='trash-icon-img' />
+      <label htmlFor="circleCheck"></label>
+      <span className={`${completed ? "completed" : ""}`}>{title}</span>
+      <button onClick={handleClick} className="trash-icon" aria-label="Hapus">
+        <img src="./trash.svg" alt="" className="trash-icon-img" />
       </button>
     </div>
   );
