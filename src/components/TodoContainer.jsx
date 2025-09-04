@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchTodos,
@@ -22,8 +22,15 @@ const TodoContainer = () => {
   const handleAddTodo = (title) => {
     dispatch(addTodo(title));
   };
-  const finishedCount = todos.filter((todo) => todo.completed).length;
-  const unFinishedCount = todos.filter((todo) => !todo.completed).length;
+  const finishedCount = useMemo(
+    () => todos.filter((todo) => todo.completed).length,
+    [todos]
+  );
+
+  const unFinishedCount = useMemo(
+    () => todos.filter((todo) => !todo.completed).length,
+    [todos]
+  );
   const totalCount = todos[todos.length - 1]?.id;
   if (error) return <p>{error.message}</p>;
   return (
