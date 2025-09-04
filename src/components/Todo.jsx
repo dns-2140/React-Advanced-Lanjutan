@@ -26,4 +26,4 @@ const Todo = ({ todo, onToggle, onDelete }) => {
   );
 };
 
-export default Todo;
+export default React.memo(Todo);
