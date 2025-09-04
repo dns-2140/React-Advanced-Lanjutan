@@ -9,7 +9,7 @@ _A modern todo app with dark/light theme support_
 - 🎯 Persistent data (localStorage or API)
 - 📱 Fully responsive design
 - 🔄 Animated transitions
-- ♿️ Keyboard accessible
+- ⚡ Performance optimized with `React.memo`, `useCallback`, and `useMemo`
 
 ## Technologies 🛠️
 
